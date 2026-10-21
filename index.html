@@ -292,4 +292,97 @@
                     <select id="item">
                         <option value="86 Diamonds">86 Diamonds - Rp 20.000</option>
                         <option value="172 Diamonds">172 Diamonds - Rp 40.000</option>
-                        <option value="257 Diamonds">257 Diamonds - Rp 60.000
+                        <option value="257 Diamonds">257 Diamonds - Rp 60.000</option>
+                        <option value="706 Diamonds">706 Diamonds - Rp 160.000</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>3. Metode Pembayaran</label>
+                    <select id="payment">
+                        <option value="QRIS">QRIS (All Payment)</option>
+                        <option value="DANA">DANA</option>
+                        <option value="GoPay">GoPay</option>
+                        <option value="Transfer Bank">Transfer Bank</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">Beli Sekarang</button>
+            </form>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <!-- Kolom 1: Profil / Deskripsi -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-circle-notch">:OURASTORE</i>
+                </div>
+                <p>OURA STORE adalah tempat top up games yang aman, murah dan terpercaya. Proses cepat 1-3 Detik. Open 24 jam. Payment terlengkap. Jika ada kendala silahkan klik logo CS pada kanan bawah di website ini.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Kolom 2: Peta Situs -->
+            <div class="footer-col">
+                <h4>Peta Situs</h4>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Cek Transaksi</a></li>
+                    <li><a href="#">Hubungi Kami</a></li>
+                    <li><a href="#">Ulasan</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom 3: Dukungan -->
+            <div class="footer-col">
+                <h4>Dukungan</h4>
+                <ul>
+                    <li><a href="#">Whatsapp</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Email</a></li>
+                </ul>
+            </div>
+
+            <!-- Kolom 4: Legalitas -->
+            <div class="footer-col">
+                <h4>Legalitas</h4>
+                <ul>
+                    <li><a href="#">Kebijakan Pribadi</a></li>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let currentGame = "";
+
+        function selectGame(gameName) {
+            currentGame = gameName;
+            document.getElementById('selected-game-title').innerText = "Top Up " + gameName;
+            document.getElementById('checkout').style.display = "block";
+            
+            // Scroll otomatis ke bagian form
+            document.getElementById('checkout').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function handleTopUp(event) {
+            event.preventDefault();
+            const id = document.getElementById('userid').value;
+            const item = document.getElementById('item').value;
+            const payment = document.getElementById('payment').value;
+            
+            document.getElementById('result').innerText = `[SIMULASI] Pesanan ${item} untuk ${currentGame} (ID: ${id}) via ${payment} berhasil dibuat!`;
+        }
+    </script>
+
+</body>
+</html>
