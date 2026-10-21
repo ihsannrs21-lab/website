@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top-Up Game Ala Ourastore</title>
+    <!-- FontAwesome untuk ikon media sosial -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* CSS RESET & THEME DARK MODE */
         * {
@@ -15,7 +17,9 @@
         body {
             background-color: #12141d;
             color: #ffffff;
-            padding-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* NAVBAR */
@@ -41,6 +45,7 @@
             max-width: 1200px;
             margin: 20px auto;
             padding: 0 20px;
+            width: 100%;
         }
         .banner {
             background: linear-gradient(135deg, #1e2230, #2b3042);
@@ -64,6 +69,8 @@
             max-width: 1200px;
             margin: 30px auto;
             padding: 0 20px;
+            width: 100%;
+            flex: 1;
         }
         .section-title {
             font-size: 20px;
@@ -153,6 +160,85 @@
             font-weight: bold;
             text-align: center;
         }
+
+        /* FOOTER OURASTORE STYLE */
+        footer {
+            background-color: #181b25;
+            border-top: 1px solid #2b3042;
+            color: #a0a5b5;
+            padding: 50px 20px 30px 20px;
+            margin-top: 50px;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+        .footer-col .footer-logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff9900;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer-col p {
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #8c92a4;
+        }
+        .social-icons {
+            display: flex;
+            gap: 12px;
+        }
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 36px;
+            height: 36px;
+            background-color: #1e2230;
+            color: #ffffff;
+            border-radius: 6px;
+            border: 1px solid #2b3042;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .social-icons a:hover {
+            border-color: #ff9900;
+            color: #ff9900;
+        }
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 15px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a {
+            color: #8c92a4;
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+        .footer-col ul li a:hover {
+            color: #ff9900;
+        }
     </style>
 </head>
 <body>
@@ -200,3 +286,10 @@
                     <label>1. Masukkan User ID / Zone ID</label>
                     <input type="text" id="userid" placeholder="Contoh: 12345678 (1234)" required>
                 </div>
+                
+                <div class="form-group">
+                    <label>2. Pilih Nominal</label>
+                    <select id="item">
+                        <option value="86 Diamonds">86 Diamonds - Rp 20.000</option>
+                        <option value="172 Diamonds">172 Diamonds - Rp 40.000</option>
+                        <option value="257 Diamonds">257 Diamonds - Rp 60.000
